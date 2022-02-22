@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Connection-Point.GitHub.io</id>
-    <title>这太糟糕了</title>
-    <updated>2022-02-22T07:30:11.008Z</updated>
+    <title>Oh？旅行者你来了！</title>
+    <updated>2022-02-22T07:39:02.377Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Connection-Point.GitHub.io"/>
     <link rel="self" href="https://Connection-Point.GitHub.io/atom.xml"/>
-    <subtitle>我勒个去</subtitle>
+    <subtitle>简简单单的程序员分享部落格</subtitle>
     <logo>https://Connection-Point.GitHub.io/images/avatar.png</logo>
     <icon>https://Connection-Point.GitHub.io/favicon.ico</icon>
-    <rights>All rights reserved 2022, 这太糟糕了</rights>
+    <rights>All rights reserved 2022, Oh？旅行者你来了！</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://Connection-Point.GitHub.io/post/hello-gridea/</id>
