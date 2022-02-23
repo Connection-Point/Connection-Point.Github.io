@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Connection-Point.GitHub.io</id>
     <title>Oh？旅行者你来了！</title>
-    <updated>2022-02-23T05:26:49.855Z</updated>
+    <updated>2022-02-23T13:58:56.391Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Connection-Point.GitHub.io"/>
     <link rel="self" href="https://Connection-Point.GitHub.io/atom.xml"/>
@@ -10,6 +10,26 @@
     <logo>https://Connection-Point.GitHub.io/images/avatar.png</logo>
     <icon>https://Connection-Point.GitHub.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Oh？旅行者你来了！</rights>
+    <entry>
+        <title type="html"><![CDATA[何为RTX显卡呢？RTX和GTX有何区别？]]></title>
+        <id>https://Connection-Point.GitHub.io/post/he-wei-rtx-xian-qia-ni-rtx-he-gtx-you-he-qu-bie/</id>
+        <link href="https://Connection-Point.GitHub.io/post/he-wei-rtx-xian-qia-ni-rtx-he-gtx-you-he-qu-bie/">
+        </link>
+        <updated>2022-02-23T13:48:25.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>在2018年的9月份英伟达正式推出全新的GeForce RTX 显卡，该显卡是NVIDIA历经了十年打造而成的全新系列显卡，该显卡拥有着目前最新的Turning（图灵）架构，和上一代产品Pascal架构相比，其性能有着革命性的提升。让游戏画面效果更加真实，支持光线追踪技术以及DLSS技术等特性。</p>
+<p><strong>那么RTX和GTX有何区别？各代表什么意思呢？</strong></p>
+<p>我们日常所说的GTX系列显卡是nVIDIA显卡的高端显卡或者是加强版显卡的代号，从高到低依次是GTX/GT/GS（高端产品/中端产品/低端产品）。比如在6800GT和6600GT，到了2005年的7800系列便引入了“GTX”的代号，变代替当时高端显卡代号。在进入GTX400系列之后，代表低端显卡的“GTS”也没有，全部的独立显卡统称为“GTX”，而有区别只是显卡后面数学大小来区分。<br>
+<img src="https://Connection-Point.GitHub.io/post-images/1645624661785.jpg" alt="" loading="lazy"></p>
+<p>Nvidia终于在2021年最新的RTX 30系列有所改变，在高端的3080TI和3090都统称为“RTX”，在统称中的“RT”所代表的是光线追踪（Ray Tracing的缩写），其意思是RTX 3080TI和RTX 3090显卡都拥有非凡的光线追踪性能，所谓的光线追踪是指在游戏中有着更好更真实的显示效果（其中包括阴影，光线，反射等），RTX 30显卡所采用的“图灵”架构加入RT计算单元，使得RTX30显卡的光线追踪性能和上一代产品相比提升数倍，使得游戏看起来更加真实，给玩家营造更好的游戏体验。</p>
+<p>笔者说这么多，可能有一些小伙们还不是很了解，下面我们一起来看一下这个例子吧，方便我们更好理解。<br>
+<img src="https://Connection-Point.GitHub.io/post-images/1645624276388.png" alt="" loading="lazy"><br>
+<img src="https://Connection-Point.GitHub.io/post-images/1645624299704.png" alt="" loading="lazy"><br>
+<img src="https://Connection-Point.GitHub.io/post-images/1645624336521.png" alt="" loading="lazy"><br>
+<img src="https://Connection-Point.GitHub.io/post-images/1645624361086.png" alt="" loading="lazy"></p>
+<p>从上面的图片我们可以清楚的了解到GTX1660 Super显卡和RTX3080显卡两则之间整体差距还是非常大的，比如显存类型、全新的架构、更高的核心频率等特性。当然对于大部分的学生党来说，RTX 3080显卡还是有有些小贵的，如果想要入手的话可以将目光迈向RTX 20系列或者是比较入门级别的RTX 3060</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[在GitHub-Page搭建Hexo博客]]></title>
         <id>https://Connection-Point.GitHub.io/post/zai-github-page-da-jian-hexo-bo-ke/</id>
