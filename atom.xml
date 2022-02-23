@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Connection-Point.GitHub.io</id>
     <title>Oh？旅行者你来了！</title>
-    <updated>2022-02-22T08:04:31.415Z</updated>
+    <updated>2022-02-23T05:26:49.855Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Connection-Point.GitHub.io"/>
     <link rel="self" href="https://Connection-Point.GitHub.io/atom.xml"/>
@@ -10,4 +10,75 @@
     <logo>https://Connection-Point.GitHub.io/images/avatar.png</logo>
     <icon>https://Connection-Point.GitHub.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Oh？旅行者你来了！</rights>
+    <entry>
+        <title type="html"><![CDATA[在GitHub-Page搭建Hexo博客]]></title>
+        <id>https://Connection-Point.GitHub.io/post/zai-github-page-da-jian-hexo-bo-ke/</id>
+        <link href="https://Connection-Point.GitHub.io/post/zai-github-page-da-jian-hexo-bo-ke/">
+        </link>
+        <updated>2022-02-23T05:16:20.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>我打算用hexo结合github pages构建一个轻博客网站，每周发表至少一篇博文。<br>
+Hexo建站参考教程</p>
+<p>使用hexo建站到github pages的完整教程推荐如下：</p>
+<p>https://zhuanlan.zhihu.com/p/78467553</p>
+<p>https://segmentfault.com/a/1190000017986794</p>
+<p>https://theme-stun.github.io/docs/zh-CN/</p>
+<p>https://hexo.io/zh-cn/index.html</p>
+<p>https://blog.csdn.net/hhgggggg/article/details/77853665</p>
+<p><strong>使用Stun主题</strong></p>
+<p>Stun主题比较好看，我还稍微配置了一下可以跟Typora连用（主要是为了能够正常显示插图和附件）。效果如下图：<br>
+<img src="https://Connection-Point.GitHub.io/post-images/1645593478038.png" alt="" loading="lazy"></p>
+<p>需要安装的插件列表</p>
+<ol>
+<li>Git相关插件，用于Deploy到GitHub Pages上</li>
+<li>Search相关插件，方便对站内内容进行搜索</li>
+<li>Asset-imager相关插件，方便插图附件之类的</li>
+</ol>
+<!-- more -->
+<p><strong>开启评论系统</strong></p>
+<p>Gitalk插件是利用GitHub仓库的Issue功能，为了节约空间，我另外开了一个Sea-Comments的仓库作为存储。然后照着以下教程进行操作：</p>
+<p>https://www.jianshu.com/p/4242bb065550</p>
+<p>https://theme-stun.github.io/docs/zh-CN/advanced/third-part.html#gitalk</p>
+<p>https://github.com/gitalk/gitalk</p>
+<p>需要注意的是，Stun主题已经嵌入了Gitalk，只要到Stun主题下的_config.yaml下添加自己评论仓库的一些信息即可。</p>
+<pre><code>gitalk会出现Error Network报错，弃用~，之后使用valine，评论数据存储在LeanCloud中，如有必要，及时备份。
+
+https://theme-stun.github.io/docs/zh-CN/advanced/third-part.html#valine
+</code></pre>
+<p><strong>常用命令</strong></p>
+<p>需要进入到hexo网站的本地根目录下执行命令，以windows系统为例：</p>
+<pre><code>1. hexo clean &amp;&amp; hexo g &amp;&amp; hexo s: 若修改了**_config.yaml**配置文件，需要清除         public目录下所有内容，然后根据新的配置文件重新生成静态网页，并且启动本地服务器
+2. hexo clean &amp;&amp; hexo d：修改配置后，重新发布到gitee pages上。
+</code></pre>
+<p><strong>注意事项</strong><br>
+1. 尽量使用hexo new命令生成 pages或者新的Markdown文件，然后到_posts目录下对               Markdown文件进行编辑修改（使用typora）<br>
+2. Markdown文件命名只能为英文或者数字，而标题可以在Markdown文件里边的Front Matter          YAML中进行设定（Front Matter YAML设定非常重要，参考链接）。<br>
+3. GitHub仓库容量有限（&lt; 1 GB），长期使用个人博客，注意不要插入太多太大的图片，建议是          篇博文图片不超过10张。<br>
+4. 博客内容完全公开，注意不要发布违法或者引发舆论的内容，并注意保护个人隐私。</p>
+<p>参考内容： https://theme-stun.github.io/docs/zh-CN/</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[挖矿是否会对我的显卡或电脑造成损害？]]></title>
+        <id>https://Connection-Point.GitHub.io/post/wa-kuang-shi-fou-hui-dui-wo-de-xian-qia-huo-dian-nao-zao-cheng-sun-hai/</id>
+        <link href="https://Connection-Point.GitHub.io/post/wa-kuang-shi-fou-hui-dui-wo-de-xian-qia-huo-dian-nao-zao-cheng-sun-hai/">
+        </link>
+        <updated>2022-02-23T05:05:19.000Z</updated>
+        <content type="html"><![CDATA[<p>在本文中，我们将讲述有关显卡挖矿细节，并讨论挖矿活动是如何影响您的电脑硬件，通常来说，人们都会问“加密货币挖矿是否会缩短显卡的寿命”？<br>
+那么，挖矿是否会伤害到您的显卡呢？</p>
+<p>答案是肯定的，亦可为否定的。这取决于您如何设置并优化您的显卡，如果您使用了合适的设置，则无需担心！</p>
+<p><img src="https://Connection-Point.GitHub.io/post-images/1645592834082.jpg" alt="" loading="lazy"><br>
+与其他电子元器件一样，显卡在运行期间将吸取电能，且大部分电能将转换为热量。当显卡处于负载状态时(游戏、渲染或挖矿等)，这些电子元器件将会比平时更热，而热量主要将从显卡核心以及内存组件散发出去。</p>
+<p>在某些案例中，稳定的显卡挖矿比起游戏可能还要更安全，运用显卡进行挖矿时，显卡负载水平相对均匀稳定，没有出现游戏过程中热量暴增暴跌等剧烈波动的情况。不同的纹理及贴图、游戏时间将给您的显卡带来不同的运行负载，这可能会导致您的显卡温度突然上升至70°C甚至80°C，然后又下降到50°C。</p>
+<p>运用正确适当的设置，您可以将显卡的负载在均匀地摊分开来，例如，您的显卡可一直运行在65°C的温度水平，您可以阅读该文章了解如何有效优化您的硬件温度。</p>
+<p>我们建议您观看这个视频作为参考，一个专门做游戏测试的Youtube频道做了一个测试，他们将一张崭新的RTX 2080 Ti游戏显卡与一张已用于挖矿一年半的RTX 2080 Ti的显卡作性能对比测试。测试结果显示，由于散热影响，用于挖矿的显卡性能略微有所下降，我们可以考虑原因是散热片老化所导致，如果更换新的散热片我们应该可以得到一个一样的性能表现。但同时需要注意的是，玩游戏甚至是办公使用之后的显卡，其散热片及其他配件也会随着时间的推移而老化。</p>
+<p><strong><!-- more --><br>
+如何防止挖矿给显卡造成损害或缩短显卡寿命？</strong></p>
+<p>长期运行于80°C甚至90°C温度水平的显卡毫无疑问将有一定的几率遭受损害，且硬件寿命也将进一步缩短。</p>
+<p>但有一个简单便捷的方法，可有效地降低显卡的温度同时不影响性能输出。</p>
+<p>您在高中的物理课上应该学过这一点，运行功耗为200W的显卡与运行一个功耗为200W的加热器的效果本质上是相同的。</p>
+<p>这意味着，如果您要降低显卡的热量输出，您必须降低显卡的功耗水平。幸运的是，目前有很多工具可以帮您实现这些操作，MSI Afterburner则是目前最受欢迎的超频或降频的工具之一。</p>
+<p>💬摘自https://www.nicehash.com/blog/post/can-mining-damage-my-gpu-or-a-pc</p>
+]]></content>
+    </entry>
 </feed>
