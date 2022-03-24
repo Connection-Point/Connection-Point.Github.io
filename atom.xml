@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Connection-Point.GitHub.io</id>
     <title>Oh？旅行者你来了！</title>
-    <updated>2022-03-24T07:56:26.861Z</updated>
+    <updated>2022-03-24T08:26:20.941Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Connection-Point.GitHub.io"/>
     <link rel="self" href="https://Connection-Point.GitHub.io/atom.xml"/>
@@ -10,6 +10,83 @@
     <logo>https://Connection-Point.GitHub.io/images/avatar.png</logo>
     <icon>https://Connection-Point.GitHub.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Oh？旅行者你来了！</rights>
+    <entry>
+        <title type="html"><![CDATA[在Python上利用Open-Cv实现人脸识别]]></title>
+        <id>https://Connection-Point.GitHub.io/post/zai-python-shang-li-yong-open-cv-shi-xian-ren-lian-shi-bie/</id>
+        <link href="https://Connection-Point.GitHub.io/post/zai-python-shang-li-yong-open-cv-shi-xian-ren-lian-shi-bie/">
+        </link>
+        <updated>2022-03-24T08:08:48.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>在本文中我将介绍一个异常简单的使用Python语言和开源库OpenCV的人脸识别方法，供此开启人脸识别之旅。</p>
+<p>在回复区提出任何问题之前：</p>
+<ol>
+<li>不要略过文章而直接去尝试运行程序代码。你不仅需要调通代码，还需要在理解代码功能的基础上对代码进行故障排解。</li>
+<li>确保你使用的是OpenCV V2版本。</li>
+<li>为了保证脚本进行正常，你需要配备一个功能正常的网络摄像头。</li>
+<li>首先浏览一下其他人的点评和问题，因为有可能你的问题别人已经提出过。<br>
+多谢。</li>
+</ol>
+<p><strong>OpenCV</strong><br>
+OpenCV是计算机视觉领域最受欢迎的库。OpenCV最早是使用C/C++语言进行编写的，现已支持Python语言捆绑使用。 OpenCV使用机械学习算法对图像中的人脸进行搜索。由于有着与人脸一样复杂的原因，不存在一项简便的测试可以告知人们是否能够识别出人脸。相反，算法需要对成千上万细小的模式和特征进行匹配。面部识别算法被分解成成千上万很小的、易理解的任务，每一个任务较易实现。这些任务被称为分类器。<br>
+像人脸一样，你可能有6，000个基于更多的分类器在进行人脸检测过程中，每一个分类器都需要进行匹配（当然要在一定的误差范围内）。但这其中就有问题了。在人脸识别过程中，算法从图片的左上角开始向右下角按小块逐步进行匹配，对每一个小块的识别过程中，算法都会持续的问：“这是人脸么？这是人脸么？这是人脸么？”由于在每个小块有着6000甚至更多的匹配项需要进行匹配，你可能会有无数的计算要执行，这些计算将引发你的电脑发生死机。</p>
+<p>为解决这个问题，OpenCV使用了级联技术。那什么是级联?最适当的答案就在字典中。级联就是一个瀑布或者一系列的瀑布。</p>
+<p>像一系列的瀑布过程一样，OpenCV级联将人脸检测过程拆分成了多个过程。在每一个图像小块中只进行一次粗略的测试。如果测试通过，接下来进行更详细的细节测试，依次重复。检测算法中有30至50个这种过程或者级联，只有在所有过程成功后才会最终识别到人脸。这样做的好处是在最初的几个过程中大多数的图片将会因不满足测试而被过略掉，算法可以无需浪费时间对每一张图像的6，000个属性进行检验。人脸识别算法运行耗时由数小时级降至实时级。</p>
+<p><strong>级联实现</strong><br>
+理论听起来非常复杂，但实现起来去非常简单。级联其实就是一组包含了OpenCV用于进行目标识别的数据组成的XML文件。只需使用你想用的级联对你的代码进行初始化操作，其余过程由级联替你完成。鉴于人脸识别是如此的普适，OpenCV包含了大量的用于人脸识别、眼部识别、手部及腿部识别的内置级联。甚至还包含了对非人物对象识别使用的级联工具。例如，你是一个香蕉店的老板，OpenCV就有一个对消费者偷香蕉的行为追踪的级联。</p>
+<p><strong>OpenCV安装</strong></p>
+<p>首先需要找到适合你电脑的安装文件。我发现安装OpenCV才是整个过程中最难的部分。如果你最到了奇怪的无法解释的报错，有可能是因为库冲突，32位和64位差异等。我总结的最简单方法是安装一台Linux虚拟机然后从头开始安装。如果说想要比较方便的话可以像我一样使用Pycharm IDE直接从Interpreter设置哪里下载OpenCV目录包</p>
+<p>一旦安装完成，开启一个Python会话，然后输入以下代码对安装是否正常进行确认：<br>
+<code>$ python</code><br>
+<code>import cv2</code></p>
+<p>如果没有任何报错，可以继续以下步骤。</p>
+<p>理解代码</p>
+<p>让我们开始分解真实的代码，可以从repo网站下载。需下载脚本face_detect.py，图片abba.png和XML文件haar_cascade_frontalface_default.xml三个文件。</p>
+<p><code># Get user supplied values</code><br>
+<code>imagePath = sys.argv[1]</code><br>
+<code>cascPath = sys.argv[2]</code></p>
+<p>首先将相片和级联名称传递给命令行的参数。我们将会使用Abba相片和由OpenCV提供的进行人脸检测的默认级联。</p>
+<p><code># Create the haar 级联</code><br>
+<code>facecascade = cv2.cascadeClassifier(cascPath)</code></p>
+<p>现在我们创建了级联，并用我们的人脸级联初始化了它。这样就把该级联载入内存并且可以使用了。记住，级联就是一个包含了用于人脸检测的数据的XML文件。</p>
+<p><code># Read the image</code><br>
+<code>image = cv2.imread(imagePath)</code><br>
+<code>gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</code></p>
+<p>下面是读取图片并进行灰度转换。在进行灰度转换过程中已经完成了OpenCV的多个操作步骤。</p>
+<p><code># Detect faces in the image</code><br>
+<code>faces = facecascade.detectMultiScale(</code><br>
+<code>gray,</code><br>
+<code>scaleFactor=1.1,</code><br>
+<code>minNeighbors=5,</code><br>
+<code>minSize=(30, 30),</code><br>
+<code>flags = cv2.cv.CV_HAAR_SCALE_IMAGE</code><br>
+<code>)</code></p>
+<p>这个函数检测实际的人脸，因此是关键代码，所以我们仔细检查一下选项。</p>
+<ol>
+<li>detectMultiScale function是一个检测对象的通用函数。由于我们调用它检测人脸，所以它就将检测人脸。第一个选项是图片灰度转换的相片。</li>
+<li>第二个选项是scaleFactor。由于可能存在部分人脸距离相机相对较近，从而与较远处的人脸相比，尺寸较大。比例因子可以进行抵消补偿。</li>
+<li>检测算法使用了一个活动窗口进行目标检测。minNeighbors选项定义了在其声明人脸被找到前，当前对象附件的目标数量。同时，minSize选项给出了每个窗口的大小。</li>
+</ol>
+<p>在这些方面我采用了常用值。在实际中你可以对窗口尺寸、补偿系数等进行调试直到找到最适合的值。</p>
+<p>函数的返回值是一组四边型，四边型内是算法检测到的人脸。下一步，我们将对函数的这些返回值进行循环。</p>
+<p><code>print &quot;Found {0} faces!&quot;.format(len(faces))</code></p>
+<p><code># Draw a rectangle around the faces</code><br>
+<code>for (x, y, w, h) in faces:</code><br>
+<code>cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)</code></p>
+<p>这个函数返回4个值：四边型的X轴、Y轴位置，四边型的宽度W和高度H。</p>
+<p>使用以上4个值调用内置函数rectangle()画出一个四边型。</p>
+<p><code>cv2.imshow(&quot;Faces found&quot; ,image)</code><br>
+<code>cv2.waitKey(0)</code></p>
+<p>最后，展示这个图片给用户，并等待用户的一个键盘输入。</p>
+<p>结果检查</p>
+<p>让我们再对Abba图片进行一次测试。<br>
+<code>$ python face_detect.py abba.png haar级联_frontalface_default.xml</code><br>
+需要注意的是，由于采用了基于机械学习的算法，检测结果永远无法达到100%精确。大多数案例中你都能得到较好的结果，但偶尔算法也会检测到错误的对象，就像检测到错误的人脸一样。</p>
+<p>代码在这里。<br>
+https://github.com/Connection-Point/FaceDetect</p>
+<p>使用网络摄像头?<br>
+如果你想便用摄像头怎么办？OpenCV从摄像头按帧抓取图片后你就可以按帧进行人脸检测了。你需要一台高性能计算机，虽然我已用了3年的笔记本可以应付这项工作，但我也只是在做毕业设计的时候才使用这个技术。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[如何选择：游戏笔记本电脑对比游戏台式机?]]></title>
         <id>https://Connection-Point.GitHub.io/post/ru-he-xuan-ze-you-xi-bi-ji-ben-dian-nao-dui-bi-you-xi-tai-shi-ji/</id>
